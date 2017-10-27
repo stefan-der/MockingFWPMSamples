@@ -25,14 +25,12 @@ public class TestLinkListeSpy {
         spyListenObjekt.add("erster Eintrag");
         spyListenObjekt.add("zweiter Listeneintrag");
 
-        verify(spyListenObjekt.add("erster Eintrag"));
-
         /* Abfangen der Listen Funktionalität add */
         when(spyListenObjekt.add(anyString())).thenThrow(AccessDeniedException.class);
 
         /* Ausführung der remove Funktion mit dem  */
         /* wirft keine Exception da nur die Funktion add überschrieben wurde) */
-        spyListenObjekt.remove("zweiter Listeneintrag");
+        spyListenObjekt.remove(1);
 
         /* wirft die vordefinierte Exception */
         spyListenObjekt.add("dritter Eintrag");

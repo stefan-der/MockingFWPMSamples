@@ -26,7 +26,7 @@ public class TestRolloBedienKonsole {
         reelleRolloBedienKonsole.hochFahrenKlick(1);
 
         // Verify
-        Mockito.verify(reelleRolloBedienKonsole).signalisiereOkImDisplay();
+        Mockito.verify(rolloManagementInstanzMock).hochFahrenSenden(1);
     }
     @Test(expected = RolloBedienKonsoleException.class)
     public void rolloBedienKonsole_Reaktion_Auf_Nicht_Vorhandenen_Rollo(){
